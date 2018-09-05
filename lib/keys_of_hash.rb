@@ -5,8 +5,16 @@ class Hash
 end
 class Hash
    def keys_of(*arguments)
-		animals = []
-		self.each { |animal, place|
+		keys = []
+		self.each do |key,val|
+		  if arguments.include?(val)
+		  keys << key
+		  end
+		end
+		keys
+	end
+end
+		  { |animal, place|
 			if arguments.include?(place)
 				animals << animal
 			end
